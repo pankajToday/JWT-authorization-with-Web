@@ -13,7 +13,7 @@
 ## Basic Features
 - JWT authentication for API routes
 - JWT authentication for Web routes
-- Sample Versio Control Page that compares Two list data and shows differences.
+- Sample Version Control Page that compares Two list data and shows differences.
   
 
 
