@@ -31,9 +31,9 @@
         </div>
     @endif
 
-   {{-- <div class="max-w-7xl mx-auto p-6 lg:p-8">
-        <div class="flex justify-center">
-            Login
+    <div class="max-w-7xl mx-auto p-6 lg:p-8">
+        <div class="flex justify-center  bg-white" style="border-radius: 5px 5px;">
+          JWT Token based  Login
         </div>
 
         <div style=" border-radius: 5px 5px; background: white; margin: 20px; padding: 10px; width: 500px;">
@@ -55,11 +55,11 @@
             </div>
         </div>
 
-    </div>--}}
+    </div>
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            <div class="flex justify-center">
-             Web   Login
+            <div class="flex justify-center bg-white" style="border-radius: 5px 5px;">
+             Web Basic  Login
             </div>
 
             <form method="post" action="/web-login">
@@ -98,15 +98,12 @@
         let email = document.getElementById('email').value ;
         let password = document.getElementById('password').value;
 
-        const headers = {
-            'Content-Type': 'application/json',
-           // 'Authorization': 'JWT fefege...'
-        }
 
-      axios.post('/api/login',{email:email ,password:password},headers).then((res)=>{
+
+      axios.post('/api/login',{email:email ,password:password}).then((res)=>{
           if( res.status === 200 && res.data.status == 'success'  ) {
-              document.cookie = 'auth_token=' + res.data.authorisation.token;
-              window.location='/home';
+           //   document.cookie = 'auth_token=' + res.data.authorisation.token;
+              window.location='/home-mobile';
           }
 
       }).catch((error)=>{

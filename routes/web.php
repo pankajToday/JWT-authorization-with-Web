@@ -26,9 +26,13 @@ Route::get('forget-password', function (){ return view('Auth.forget-password'); 
 
 
 Route::get('logout', [\App\Http\Controllers\AuthController::class,'logout']);
-Route::get('home', ['middleware' => ['auth:web,api'], function () {
+Route::get('home', ['middleware' => ['auth:web'], function () {
     return view('home');
 }]);
+
+Route::get('home-mobile',  function () {
+    return view('home-mobile');
+});
 
 
 

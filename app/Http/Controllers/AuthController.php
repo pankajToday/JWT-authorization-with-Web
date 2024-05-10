@@ -52,6 +52,7 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         $token = Auth::guard('api')->attempt($credentials);
+        Auth::guard('web')->attempt($credentials);
 
         if (!$token) {
             return response()->json([
@@ -61,6 +62,10 @@ class AuthController extends Controller
         }
 
         $user = Auth::guard('api')->user();
+
+        setcookie('auth_token', $token,'','/'); // 86400 = 1 day
+
+
         return response()->json([
             'status' => 'success',
             'user' => $user,
@@ -83,7 +88,7 @@ class AuthController extends Controller
         Auth::guard('web')->attempt($credentials);
         $token = Auth::guard('api')->attempt($credentials);
 
-        setcookie('auth_token', $token); // 86400 = 1 day
+        setcookie('auth_token', $token,'','/'); // 86400 = 1 day
 
         return redirect('/home');
 
