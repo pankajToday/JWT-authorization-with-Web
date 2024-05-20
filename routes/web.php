@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
@@ -34,5 +35,6 @@ Route::get('home-mobile',  function () {
     return view('home-mobile');
 });
 
-
+Route::view('posts','posts');
+Route::get('users',[ UserController::class,'fetchUsers' ])->middleware('auth:web');
 

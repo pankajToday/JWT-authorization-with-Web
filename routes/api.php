@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -30,5 +31,6 @@ Route::post('logout', [AuthController::class,'logout'])->middleware('auth:api');
 
 Route::post('profile',[ AuthController::class,'profile' ])->middleware('auth:api');;
 Route::post('fetch-posts',[ PostController::class,'fetchPosts' ])->middleware('auth:api');
-
+Route::post('fetch-post',[ PostController::class,'fetchPost' ])->middleware('auth:api');
+Route::post('delete-post',[ PostController::class,'deletePost' ])->middleware('auth:api');
 

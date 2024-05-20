@@ -7,39 +7,41 @@
 @endsection
 
 @section('pageMenu')
-    <a href="{{ url('/posts') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Post</a>
+    <a href="{{ url('/post-add') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Add Post</a>
 @endsection
 
 @section('bodySection')
     @parent
-
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="flex justify-center">
-            Profile
+           User Posts
         </div>
 
         <div style=" border-radius: 5px 5px; background: white; margin: 20px; padding: 10px; width: 500px;">
-            <table>
+            <table style="width: 100%">
+               <thead>
+               <tr>
+                   <th> No.</th>
+                   <th> Title</th>
+                   <th> Description</th>
+                   <th> Image </th>
+                   <th></th>
+               </tr>
+               </thead>
+                <tbody>
                 <tr>
-                    <th> Id</th>
-                    <td> <span id="id_output"></span> </td>
+                    <th> No.</th>
+                    <th> Title</th>
+                    <th> Description</th>
+                    <th> Image </th>
+                    <th></th>
                 </tr>
-                <tr>
-                    <th> Email</th>
-                    <td> <span id="email_output"></span> </td>
-                </tr>
-                <tr>
-                    <th> Name</th>
-                    <td> <span id="name_output"></span>  </td>
-                </tr>
+                </thead>
             </table>
         </div>
 
     </div>
-</div>
-
 @endsection
-
 
 @section('pageScript')
     @parent
@@ -78,14 +80,14 @@
         });
     }
 
-    fetchProfile();
+   // fetchProfile();
 
 </script>
 
-@endsection
 
+@endsection
 
 @section('pageFooter')
     @parent
-    <h1 style="width: 100%; text-align: center; margin: 5px 0;"> Page Footer</h1>
+    <h1> Page Footer</h1>
 @endsection
