@@ -27,7 +27,7 @@ class PostController extends Controller
         $post = $post->find( $request->id);
 
         /** use the policy verifier for check the access. **/
-        //  Policy return Auth response error 403 code , that is not good. So Policy Response is
+        //  Policy return access response error 403 code , that is not good. So Policy Response is
         //  better option to manage this.
         //  $this->authorize('view' , $post);
 

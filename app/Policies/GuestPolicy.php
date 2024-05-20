@@ -10,7 +10,7 @@ use Illuminate\Auth\Access\Response;
 
 class GuestPolicy
 {
-    use HandlesAuthorization;
+   // use HandlesAuthorization;
 
 
     /**
@@ -28,7 +28,7 @@ class GuestPolicy
     function view($user , $post):Response{
         return  $user->id === $post->user_id
             ? Response::allow()
-            : Response::deny('You do not own this post.');
+            : Response::deny ('not allowed');
     }
 
     function delete($user , $post){
