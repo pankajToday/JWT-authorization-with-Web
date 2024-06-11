@@ -3,6 +3,11 @@
 
 @include('Layout.head')
 
+<!-- Laravel PWA -->
+@laravelPWA
+
+
+
 <body class="antialiased">
 <div style="height: auto; min-height: 600px;"  class="content relative sm:flex sm:justify-center sm:items-center bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
    @if (Route::has('login'))
